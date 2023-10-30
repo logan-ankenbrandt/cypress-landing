@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cypress Software Solutions</title>
+    <link rel="icon" href="https://files.stripe.com/files/MDB8YWNjdF8xTjZhUHBKeE02TXI3aTMzfGZfbGl2ZV9ra25ZU1htNVJEbWRib0toMzZlelhsdUo00CVuRtZqe">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative; /* Added for the overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            color: #f8f9f4; /* Text color */
+            text-align: center;
+            padding: 20px;
+            z-index: 1; /* Added this line */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/l9KKgid.png') no-repeat center center/cover; /* Replace with your image URL */
+            opacity: 0.075; /* Adjust as needed */
+            z-index: -1; /* Added this line */
+        }
+
+        .hero .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #0f1d28;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            margin-left: 20%;
+            margin-right: 20%;
+            color: #0f1d28;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #0f1d28; /* Change to your preferred color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Services Section Styles */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Adjust the number as needed */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+        }
+
+        .services button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #0f1d28; /* Change to your preferred color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #0f1d28; /* Change to your preferred color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img class="logo" src="https://files.stripe.com/files/MDB8YWNjdF8xTjZhUHBKeE02TXI3aTMzfGZfbGl2ZV9ra25ZU1htNVJEbWRib0toMzZlelhsdUo00CVuRtZqe" alt="Company Logo">
+        <h1>Empower Your Business with Custom Software</h1>
+        <p>From application development to AI integration, Cypress Software Solutions provides comprehensive, scalable, and efficient software engineering services for small to medium-sized businesses.</p>
+        <button>Explore Our Services</button>
+    </section>
+
+    <!-- <section>
+        <h2>Expert Software Engineering Services Tailored to Your Needs</h2>
+        <p>Choose from a wide range of services to help your business thrive in the digital age.</p>
+        <div class="services">
+            <div class="service">
+                <h3>Infrastructure Configuration, Management, and Pricing Estimates</h3>
+                <p>We set up servers, networking components, and cloud environments tailored to your business needs, ensuring your digital assets are built on a solid foundation.</p>
+            </div>
+            <div class="service">
+                <h3>Full-stack Web Application Development</h3>
+                <p>We design and develop robust web applications tailored to your unique business needs, providing holistic, scalable, and user-friendly solutions.</p>
+            </div>
+            <div class="service">
+                <h3>API Design & Development</h3>
+                <p>We create robust and scalable APIs for seamless data exchange and integration between applications, ensuring reliability and performance.</p>
+            </div>
+            <div class="service">
+                <h3>AI Solution Development, Integration, and Pricing Estimates</h3>
+                <p>We harness the power of AI to build or integrate AI-driven functionalities into your systems, from recommendation engines and chatbots to complex predictive analysis tools.</p>
+            </div>
+            <div class="service">
+                <h3>Database Design & Configuration</h3>
+                <p>We ensure efficient data storage, retrieval, and management by choosing the right database system, designing its structure, and optimizing its performance.</p>
+            </div>
+            <div class="service">
+                <h3>Third-party API Integration & Pricing Estimates</h3>
+                <p>We seamlessly integrate third-party APIs into your applications, extending your app’s functionalities without the need for ground-up development.</p>
+            </div>
+            <div class="service">
+                <h3>Data Acquisition & Integration</h3>
+                <p>We source valuable and relevant data to fuel your business's insights and decisions, ensuring the data is accurate and seamlessly integrates into your existing systems.</p>
+            </div>
+            <div class="service">
+                <h3>Software Maintenance & Uplift Services</h3>
+                <p>Beyond initial development, we provide ongoing maintenance and uplift of your software solutions to ensure optimal performance, security, and the integration of new features as your business grows and evolves.</p>
+            </li>
+        </div>
+        <br />
+        <button class="cta-button">Get Started Today</button>
+    </section>
+
+    <section>
+        <h2>Streamlined Process for Optimal Results</h2>
+        <ol>
+            <li>
+                <h3>Discovery Call</h3>
+                <p>We start by evaluating your business needs and identifying potential solutions. This involves a comprehensive discussion to understand your business objectives, recurring workflows, and challenges.</p>
+            </li>
+            <li>
+                <h3>Feasibility Assessment</h3>
+                <p>Next, we assess each potential solution to determine its feasibility. This ensures that we align with your business goals and have the potential for successful implementation.</p>
+            </li>
+            <li>
+                <h3>Gathering Requirements Call</h3>
+                <p>Once a solution has been determined feasible, we conduct another call to go through each business and non-business requirement in detail. This helps us design a solution that meets your specific needs.</p>
+            </li>
+            <li>
+                <h3>Development + Check-ins</h3>
+                <p>We then move to the development phase, where we build your solution. Regular check-ins are conducted at a cadence you specify, allowing you to stay updated on progress and provide feedback.</p>
+            </li>
+            <li>
+                <h3>User Testing + Deployment</h3>
+                <p>Before deployment, we organize a user testing session in a controlled environment. This ensures that the solution works as expected and any issues are addressed. Once testing is successful, we proceed with deployment.</p>
+            </li>
+            <li>
+                <h3>Maintenance + Continuous Improvements</h3>
+                <p>Post-deployment, we offer an optional maintenance service. For a monthly fee, we provide on-call support for bug fixes, minor uplifts, and weekly system health/enhancement brainstorming calls. This ensures your solution continues to perform optimally and evolves with your business needs.</p>
+            </li>
+        </ol>
+        <button>Start Your Journey with Us Today</button>
+    </section>
+
+    <section>
+        <h2>Ready to Transform Your Business with Cypress Software Solutions?</h2>
+        <p>Join the ranks of successful businesses that have leveraged our tailored software solutions. Let's work together to drive your business forward in the digital age.</p>
+        <button>Contact Us Today to Get Started</button>
+    </section> -->
+</body>
+</html>
